@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Solicita tu préstamo con Quiterio Crédito. Rápido, seguro y hasta $30,000 MXN. Aprobación en 24 horas.">
+  <title>Solicitar Préstamo - Quiterio Crédito</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style-solicitud.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+      <i class="fas fa-hand-holding-usd logo"></i>
+      <h1>Quiterio Crédito</h1>
+    </div>
+    <p>Tu apoyo financiero hasta <strong>$30,000 MXN</strong></p>
+  </header>
+
+  <nav>
+    <a href="inicio.html">INICIO</a>
+    <a href="beneficios.html">BENEFICIOS</a>
+    <a href="solicitar.html">SOLICITAR PRÉSTAMO</a>
+    <a href="preguntas.html">PREGUNTAS FRECUENTES</a>
+    <a href="contacto.html">CONTACTO</a>
+  </nav>
+
+  <section>
+    <h2 class="section-title">Solicita tu préstamo</h2>
+    
+    <div class="form-steps">
+      <div class="step active">1</div>
+      <div class="step">2</div>
+      <div class="step">3</div>
+    </div>
+    
+    <div class="form-container">
+      <div class="formulario">
+        <form id="loan-form" action="enviar.php" method="POST">
+          <div class="form-group">
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan Pérez García">
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required placeholder="Ej. juan@ejemplo.com">
+          </div>
+          
+          <div class="form-group">
+            <label for="telefono">Teléfono de contacto:</label>
+            <input type="tel" id="telefono" name="telefono" required placeholder="Ej. 5512345678">
+          </div>
+          
+          <div class="form-group">
+            <label for="monto">Monto solicitado (máx $30,000):</label>
+            <input type="range" id="monto-range" min="1000" max="30000" step="1000" value="10000">
+            <div class="monto-value" id="monto-value">$10,000 MXN</div>
+            <input type="number" id="monto" name="monto" max="30000" required value="10000" style="display: none;">
+          </div>
+          
+          <div class="form-group">
+            <label for="plazo">Plazo de pago:</label>
+            <select id="plazo" name="plazo" required>
+              <option value="">Selecciona una opción</option>
+              <option value="3">3 meses</option>
+              <option value="6">6 meses</option>
+              <option value="12">12 meses</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="motivo">Motivo del préstamo:</label>
+            <textarea id="motivo" name="motivo" rows="4" placeholder="Describa brevemente para qué utilizará el préstamo..."></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label>
+              <input type="checkbox" required> Acepto los <a href="#">términos y condiciones</a> y la <a href="#">política de privacidad</a>
+            </label>
+          </div>
+          
+          <button type="submit">Enviar solicitud</button>
+        </form>
+      </div>
+      
+      <div class="calculator">
+        <h3>Calcula tu préstamo</h3>
+        
+        <div class="form-group">
+          <label for="calc-monto">Monto:</label>
+          <input type="number" id="calc-monto" min="1000" max="30000" value="10000">
+        </div>
+        
+        <div class="form-group">
+          <label for="calc-plazo">Plazo (meses):</label>
+          <select id="calc-plazo">
+            <option value="3">3 meses</option>
+            <option value="6">6 meses</option>
+            <option value="12">12 meses</option>
+          </select>
+        </div>
+        
+        <div class="calculation-result">
+          <div class="result-line">
+            <span>Monto solicitado:</span>
+            <span id="calc-result-monto">$10,000 MXN</span>
+          </div>
+          <div class="result-line">
+            <span>Tasa de interés:</span>
+            <span id="calc-result-tasa">12% anual</span>
+          </div>
+          <div class="result-line">
+            <span>Pago mensual:</span>
+            <span id="calc-result-mensual">$3,400 MXN</span>
+          </div>
+          <div class="result-line">
+            <span>Total a pagar:</span>
+            <span id="calc-result-total">$10,200 MXN</span>
+          </div>
+          <div class="result-line result-total">
+            <span>CAT:</span>
+            <span>15.6%</span>
+          </div>
+        </div>
+        
+        <p style="font-size: 0.8rem; margin-top: 20px; text-align: center;">
+          * El cálculo es aproximado. Las condiciones finales pueden variar según perfil crediticio.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quiterio Crédito</h3>
+        <p>Ofrecemos préstamos accesibles y seguros para ayudar a nuestros clientes con sus necesidades financieras.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Enlaces Rápidos</h3>
+        <div class="footer-links">
+          <a href="inicio.html">Inicio</a>
+          <a href="beneficios.html">Beneficios</a>
+          <a href="solicitud.html">Solicitar Préstamo</a>
+          <a href="preguntas.html">Preguntas Frecuentes</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Legal</h3>
+        <div class="footer-links">
+          <a href="#">Términos y Condiciones</a>
+          <a href="#">Política de Privacidad</a>
+          <a href="#">Aviso Legal</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>&copy; 2025 Quiterio Crédito. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Funcionalidad para el slider de monto
+    const montoRange = document.getElementById('monto-range');
+    const montoInput = document.getElementById('monto');
+    const montoValue = document.getElementById('monto-value');
+    
+    montoRange.addEventListener('input', function() {
+      montoInput.value = this.value;
+      montoValue.textContent = `$${Number(this.value).toLocaleString('es-MX')} MXN`;
+      updateCalculator();
+    });
+    
+    montoInput.addEventListener('input', function() {
+      if (this.value > 30000) this.value = 30000;
+      if (this.value < 1000) this.value = 1000;
+      montoRange.value = this.value;
+      montoValue.textContent = `$${Number(this.value).toLocaleString('es-MX')} MXN`;
+      updateCalculator();
+    });
+    
+    // Calculadora de préstamo
+    const calcMonto = document.getElementById('calc-monto');
+    const calcPlazo = document.getElementById('calc-plazo');
+    const calcResultMonto = document.getElementById('calc-result-monto');
+    const calcResultTasa = document.getElementById('calc-result-tasa');
+    const calcResultMensual = document.getElementById('calc-result-mensual');
+    const calcResultTotal = document.getElementById('calc-result-total');
+    
+    // Sincronizar con el formulario principal
+    montoRange.addEventListener('input', function() {
+      calcMonto.value = this.value;
+      updateCalculator();
+    });
+    
+    calcMonto.addEventListener('input', function() {
+      if (this.value > 30000) this.value = 30000;
+      if (this.value < 1000) this.value = 1000;
+      montoRange.value = this.value;
+      montoInput.value = this.value;
+      montoValue.textContent = `$${Number(this.value).toLocaleString('es-MX')} MXN`;
+      updateCalculator();
+    });
+    
+    calcPlazo.addEventListener('change', function() {
+      document.getElementById('plazo').value = this.value;
+      updateCalculator();
+    });
+    
+    document.getElementById('plazo').addEventListener('change', function() {
+      calcPlazo.value = this.value;
+      updateCalculator();
+    });
+    
+    function updateCalculator() {
+      const monto = parseFloat(calcMonto.value);
+      const plazo = parseInt(calcPlazo.value);
+      
+      // Tasas según el plazo (ejemplo)
+      let tasaAnual;
+      if (plazo <= 3) {
+        tasaAnual = 0.12; // 12%
+      } else if (plazo <= 6) {
+        tasaAnual = 0.14; // 14%
+      } else {
+        tasaAnual = 0.16; // 16%
+      }
+      
+      const tasaMensual = tasaAnual / 12;
+      const pagoMensual = monto * (tasaMensual * Math.pow(1 + tasaMensual, plazo)) / (Math.pow(1 + tasaMensual, plazo) - 1);
+      const totalPagar = pagoMensual * plazo;
+      
+      calcResultMonto.textContent = `$${monto.toLocaleString('es-MX')} MXN`;
+      calcResultTasa.textContent = `${(tasaAnual * 100).toFixed(0)}% anual`;
+      calcResultMensual.textContent = `$${Math.round(pagoMensual).toLocaleString('es-MX')} MXN`;
+      calcResultTotal.textContent = `$${Math.round(totalPagar).toLocaleString('es-MX')} MXN`;
+    }
+    
+    // Inicializar calculadora
+    updateCalculator();
+    
+    // Validación del formulario
+    const loanForm = document.getElementById('loan-form');
+    
+    loanForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Validaciones básicas
+      const nombre = document.getElementById('nombre').value;
+      const email = document.getElementById('email').value;
+      const telefono = document.getElementById('telefono').value;
+      const monto = document.getElementById('monto').value;
+      const plazo = document.getElementById('plazo').value;
+      
+      if (!nombre || !email || !telefono || !monto || !plazo) {
+        alert('Por favor, complete todos los campos obligatorios.');
+        return;
+      }
+      
+      // Si todo está correcto, enviar el formulario
+      alert('¡Solicitud enviada con éxito! Nos pondremos en contacto contigo en menos de 24 horas.');
+      this.submit();
+    });
+  </script>
+</body>
+</html>
